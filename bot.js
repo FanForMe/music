@@ -666,7 +666,7 @@ client.on('guildMemberAdd', member => {
 
 
 
-
+if (message.content.startsWith(prefix - "help")) {
 client.on('message', message => {
         message.react(" الاوامر العامة ")
      let embed = new Discord.RichEmbed()")
