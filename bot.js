@@ -496,38 +496,6 @@ function search_video(query, cb) {
 function isYoutube(str) {
 	return str.toLowerCase().indexOf('youtube.com') > -1;
 }
- client.on('message', message => {
-     if (message.content === prefix +"help") {
-    const embed = new Discord.RichEmbed()
-     .setColor("RANDOM")
-     .addField(`**__أوامر البوت__**`,`
-.    **${prefix}join**
-	 عشان يدخل البوت الروم
-	 **${prefix}play**
-	 امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
-	 **${prefix}skip**
-	 تغير الأغنية
-	 **${prefix}pause**
-	 ايقاف الأغنية
-	 **${prefix}resume**
-     مواصلة الأغنية
-	 **${prefix}vol**
-	 مستوى الصوت 1-100
-	 **${prefix}stop**
-	 خروج البوت من الروم
-
-
-	 Prefix = ${prefix}
-	 Ping = ${Date.now() - message.createdTimestamp}ms
-	 For Help = <@!283691332633886720>
-	 By ELBobGamer !	 `)
-
-      message.channel.send({embed});
-	 }
-	});
-
-
-
 
 
 	client.on('ready', () => {
@@ -666,7 +634,9 @@ client.on('guildMemberAdd', member => {
 
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) {
-    let pages = ['هنا المكتوب بالصفحه الاولي','page2','page3']
+    let pages = ['الأوامر العامة'
+		 !clear
+		 لمسح الشات,'page2','page3']
     let page = 1;
 
     let embed = new Discord.RichEmbed()
