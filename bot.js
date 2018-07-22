@@ -678,11 +678,7 @@ const HypixelAPI = require('hypixel-api')
  
 const args = process.argv.slice(2)
  
-if (args.length < 2) {
-    console.log('Hi,')
-    process.exit(0)
-}
- 
+
  
 const HypixelClient = new HypixelAPI(args[1])
  
@@ -693,21 +689,18 @@ client.on('ready', () => {
         type: 1 // 0 for playing, 1 for streaming, 2 for listening and 3 for watching.
     }
 })
+
  
-    console.log('The bot has been initialized!')
- 
-    let installedGuilds = client.guilds.array()
- 
-    console.log('This bot is available on ' + installedGuilds.length + ' guilds:')
- 
+    let installedGuilds = client.guilds.array(
+  
     let totalMembers = 0
  
     for (let i = 0; i < installedGuilds.length; i++) {
         totalMembers += installedGuilds[i].memberCount
-        console.log(installedGuilds[i].name + ': ' + installedGuilds[i].memberCount + ' members')
+       
     }
  
-    console.log('Total members: ' + totalMembers)
+    
 })
  
 client.on('message', async (message) => {
