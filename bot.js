@@ -635,8 +635,9 @@ client.on('guildMemberAdd', member => {
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) {
     let pages = ['الأوامر العامة'
-		 ${prefix}clear
-		 لمسح الشات,'page2','page3']
+		 {prefix}clear
+		 لمسح الشات
+		 ,'page2','page3']
     let page = 1;
 
     let embed = new Discord.RichEmbed()
@@ -689,7 +690,7 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO Sniper-Bot`` ')
+            .setTitle('``ELBob Bot`` ')
             .addField('``Uptime``', [timeCon(process.uptime())], true)
             .addField('``Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
@@ -698,9 +699,9 @@ client.on('message', message => {
             .addField('``Users``' ,`[ ${client.users.size} ]` , true)
             .addField('``Name``' , `[ ${client.user.tag} ]` , true)
             .addField('``ID``' , `[ ${client.user.id} ]` , true)
-                  .addField('``Prefix``' , `[ $ ]` , true)
+                  .addField('``Prefix``' , `[ ! ]` , true)
                   .addField('``Language``' , `[ Java Script ]` , true)
-                  .addField('``Founder ``' , ` [ !ㄨ ♪«𝓣𝓪𝓠𝓪8»~“ᴰᵉᵛ„♥ツ#4444 ] ` , true)
+                  .addField('``Founder ``' , ` [ ELBobGamer ツ ᵖᵍˣᵖᵒ ♥#0881 ] ` , true)
     })
 }
 });
