@@ -635,7 +635,7 @@ client.on('guildMemberAdd', member => {
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) {
     let pages = ['الأوامر العامة'
-		 !clear
+		 ${prefix}clear
 		 لمسح الشات,'page2','page3']
     let page = 1;
 
