@@ -582,7 +582,7 @@ return message.channel.send(`**${message.guild.members.filter(member => member.v
 
 client.on('voiceStateUpdate', (member) => {
 member.guild.channels.get("470392948291272706").setName(`Voice Online: [${member.guild.members.filter(member => member.voiceChannel).size}]`)
-})
+});
 
 
 
