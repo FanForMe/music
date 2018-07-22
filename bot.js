@@ -573,15 +573,12 @@ function isYoutube(str) {
 
 
 
-
-client.on("message", async function(message)  {
-let args = message.content.split(" ").slice(1).join(" ")
-if(message.content.startsWith("!voice")){
-return message.channel.send(`**${message.guild.members.filter(member => member.voiceChannel).size}**`);
-}
-
-client.on('voiceStateUpdate', (member) => {
-member.guild.channels.get("470392948291272706").setName(`Voice Online: [${member.guild.members.filter(member => member.voiceChannel).size}]`)
+client.on('voiceStateUpdate', (old, now) => {
+  const channel = client.channels.get('470392948291272706');
+  const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
+  const size = channel.name.match(/\[\s(\d+)\s\]/);
+  if (!size) return channel.setName(`Voice Online: ${currentSize}`);
+  if (currentSize !== size) channel.setName(`Voice Online: ${currentSize}`);
 });
 
 
