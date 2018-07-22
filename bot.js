@@ -621,7 +621,7 @@ client.on('typingStart', (ch, user) => {
             msg.delete(10000)
         })
     }
-})
+});
 
 
 
