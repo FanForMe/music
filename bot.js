@@ -668,15 +668,6 @@ client.on('guildMemberAdd', member => {
 
 
 client.on('message', message => {
-            if (message.content.startsWith(prefix - "help")) {
-		    message.react("
-╔═══╦╗──╔══╗───╔╗─╔══╗────╔╗
-║╔══╣║──║╔╗║───║║─║╔╗║───╔╝╚╗
-║╚══╣║──║╚╝╚╦══╣╚═╣╚╝╚╦══╬╗╔╝
-║╔══╣║─╔╣╔═╗║╔╗║╔╗║╔═╗║╔╗║║║
-║╚══╣╚═╝║╚═╝║╚╝║╚╝║╚═╝║╚╝║║╚╗
-╚═══╩═══╩═══╩══╩══╩═══╩══╝╚═╝
-")
         message.react(" الاوامر العامة ")
      let embed = new Discord.RichEmbed()")
 .setThumbnail(message.author.avatarURL)
@@ -704,7 +695,7 @@ client.on('message', message => {
 .addField('     **!stop** ' ,' **لإيقاف الاغنية وخروج البوت من الروم** ')	
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
-    }
+    };
 
 
 
