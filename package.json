@@ -46,6 +46,7 @@
     "simple-youtube-api": "^5.0.2",
     "canvas": "^1.6.5",
     "fs-extra": "^7.0.0",
-    "hypixel-api": "^1.0.0"
+    "hypixel-api": "^1.0.0",
+    "nodemon": "^1.18.3"
   }
 }
