@@ -367,9 +367,9 @@ client.on('message', function(message) {
 
 					// .setDescription('?')
 					message.channel.sendEmbed(play_info)
-					message.channel.send(`__تم التشغيل__
-							**${videoInfo.title}** __اسم الأغنية__
-		      ${message.author.username}         __بواسطة__ `)
+					message.channel.send(`
+							**${videoInfo.title}** :*اسم الأغنية*
+		                                       ${message.author.username} :*بواسطة*`)                         
 					// client.user.setGame(videoInfo.title,'https://www.twitch.tv/elbobgamer');
 				});
 			});
