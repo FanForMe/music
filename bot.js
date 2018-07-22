@@ -666,4 +666,47 @@ client.on('guildMemberAdd', member => {
 
 
 
+
+client.on('message', message => {
+            if (message.content.startsWith(prefix - "help")) {
+		    message.react("
+╔═══╦╗──╔══╗───╔╗─╔══╗────╔╗
+║╔══╣║──║╔╗║───║║─║╔╗║───╔╝╚╗
+║╚══╣║──║╚╝╚╦══╣╚═╣╚╝╚╦══╬╗╔╝
+║╔══╣║─╔╣╔═╗║╔╗║╔╗║╔═╗║╔╗║║║
+║╚══╣╚═╝║╚═╝║╚╝║╚╝║╚═╝║╚╝║║╚╗
+╚═══╩═══╩═══╩══╩══╩═══╩══╝╚═╝
+")
+        message.react(" الاوامر العامة ")
+     let embed = new Discord.RichEmbed()")
+.setThumbnail(message.author.avatarURL)
+.addField('     **!bc** ' ,' **لخاصية البرودكاست** ')
+.addField('     **!id**  ' ,' **لظهور الايدي** ')
+.addField('     **!invites** ' , '**لمعرفة سويت كم انفايت**') 
+.addField('     **!clear** ' ,' **لمسح الشات** ')
+.addField('     **!server** ' ,' **معلومات عن السيرفر** ')
+.addField('     **!credits** ' ,' **لمعرفة فلوسك** ')	
+.addField('     **!daily** ' ,' **لأخذ فلوس كل يوم** ')	
+.addField('     **!trans {@mention}** ' ,' **لإرسال فلوس لأي حد تمنشنه** ')			    
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+client.on('message', message => {
+            if (message.content.startsWith(prefix - "help")) {
+        message.react("اوامر الميوزك")
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **!join** ' ,' **لدخول البوت الروم** ')	
+.addField('     **!play** ' ,' **لتشفيل اغنية** ')
+.addField('     **!skip** ' ,' **لتغيير الأغنية** ')	     
+.addField('     **!pause** ' ,' **لإيقاف الأغنية مؤقتًا** ')	
+.addField('     **!resume** ' ,' **لتشفيل البوت** ')	
+.addField('     **!stop** ' ,' **لإيقاف الاغنية وخروج البوت من الروم** ')	
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+
+
+
+
 	  client.login(process.env.BOT_TOKEN);
