@@ -576,19 +576,20 @@ function isYoutube(str) {
 
 
 client.on('message', message => {
-if (message.content.startsWith(prefix + 'addrole')) {
-             if(!message.channel.guild) return message.reply('**Commands in the server**');
-        if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply('⚠ **You do not have permissions**');
-        let args = message.content.split(" ").slice(1);
-            message.guild.createRole({
-                name : args.join(' '),
-                permissions : [1]
-            }).then(function(role){
-        return message.reply('✅ **Added a Role**');
-                message.addRole(role)
-            })
+    if (!message.guild) return; 
+    if (message.content.startsWith("رابط")) {
 
-}
+        message.channel.createInvite({
+        thing: true,
+        maxUses: 1,
+        maxAge: 86400
+    }).then(invite =>
+      message.author.sendMessage(invite.url)
+    )
+  message.channel.send(`** تم أرسال الرابط برسالة خاصة **`)
+
+      message.author.send(`**هذا الرابط لشخص واحد و لمدة 24 ساعة **`)
+    }
 });
 
 
