@@ -115,7 +115,7 @@ if (message.content.startsWith(prefix + 'calc')) {
         let args = message.content.split(" ").slice(1);
        const question = args.join(' ');
    if (args.length < 1) {
-       message.reply('Specify a equation, please.\n\ Ex: #calc 5+5 ' );
+       message.reply('Specify a equation, please.\n\ Ex: !calc 5+5 ' );
 } else {    let answer;
    try {
        answer = math.eval(question);
@@ -803,15 +803,15 @@ client.on('message', message => {
     if(message.content == '!members') {
     const embed = new Discord.RichEmbed()
     .setDescription(`
-**   📗  Online:  **${message.guild.members.filter(m=>m.presence.status == 'online').size}
+**   📗 Online: **${message.guild.members.filter(m=>m.presence.status == 'online').size}
  
-**   📕  DND:      **${message.guild.members.filter(m=>m.presence.status == 'dnd').size}
+**   📕 DND: **${message.guild.members.filter(m=>m.presence.status == 'dnd').size}
  
-**   📙  Idle:     **${message.guild.members.filter(m=>m.presence.status == 'idle').size}  
+**   📙 Idle: **${message.guild.members.filter(m=>m.presence.status == 'idle').size}  
  
-**   📓   Offline:  **${message.guild.members.filter(m=>m.presence.status == 'offline').size}
+**   📓 Offline: **${message.guild.members.filter(m=>m.presence.status == 'offline').size}
  
-**   🔖   All: **${message.guild.memberCount}`)      
+**   🔖 All: **${message.guild.memberCount}`)      
  
          message.channel.send({embed});
  
