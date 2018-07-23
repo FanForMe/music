@@ -740,15 +740,15 @@ client.on('message', message => {
     if(message.content == '!members') {
     const embed = new Discord.RichEmbed()
     .setDescription(`
-**   📗  online:  **__${message.guild.members.filter(m=>m.presence.status == 'online').size}__
+**   📗  Online:  **${message.guild.members.filter(m=>m.presence.status == 'online').size}
  
-**   📕  dnd:      **__${message.guild.members.filter(m=>m.presence.status == 'dnd').size}__
+**   📕  DND:      **${message.guild.members.filter(m=>m.presence.status == 'dnd').size}
  
-**   📙  idle:     **__${message.guild.members.filter(m=>m.presence.status == 'idle').size} __  
+**   📙  Idle:     **${message.guild.members.filter(m=>m.presence.status == 'idle').size}  
  
-**   📓   offline:  **__${message.guild.members.filter(m=>m.presence.status == 'offline').size}__
+**   📓   Offline:  **${message.guild.members.filter(m=>m.presence.status == 'offline').size}
  
-**   🔖   all: **__${message.guild.memberCount}__`)      
+**   🔖   All: **${message.guild.memberCount}`)      
  
          message.channel.send({embed});
  
@@ -756,6 +756,54 @@ client.on('message', message => {
   });
 
 
+
+
+
+
+client.on('message', msg => {//msg
+    if (msg.content === 'الوان') {
+      if (msg.channel.id !== "470244501986738190") return;
+      msg.channel.send({file : "https://d.top4top.net/p_925trmdy1.png"})
+    }
+  });;
+  
+
+client.on('message', message => {
+    let args = message.content.split(' ').slice(1);
+if(message.content.split(' ')[0] == 'لون'){
+if (message.channel.id !== "470244501986738190") return;
+     const embedd = new Discord.RichEmbed()
+.setFooter('Requested by '+message.author.username, message.author.avatarURL)
+.setDescription(`**There's No Color With This Number ** ❌ `)
+.setColor(`ff0000`)
+
+if(!isNaN(args) && args.length > 0)
+
+
+ var a = message.guild.roles.find("name",`${args}`)
+          if(!a)return;
+          if (a.name > 250 || a.name < 1) return;
+const embed = new Discord.RichEmbed()
+              
+.setFooter('Requested by '+message.author.username, message.author.avatarURL)
+.setDescription(`**Color Changed Successfully** ✅ `)
+
+.setColor(`${a.hexColor}`)
+message.channel.sendEmbed(embed);
+    if (!args)return;
+setInterval(function(){})
+            let count = 0;
+            let ecount = 0;
+  for(let x = 1; x < 201; x++){
+     
+      message.member.removeRole(message.guild.roles.find("name",`${x}`))
+    
+      }
+          message.member.addRole(message.guild.roles.find("name",`${args}`));
+  
+      
+}
+});
 
 
 	  client.login(process.env.BOT_TOKEN);
