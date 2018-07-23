@@ -831,11 +831,32 @@ client.on("guildMemberAdd", member => {
 
 
 client.on('voiceStateUpdate', (old, now) => {
-  const channel = client.channels.get('ايدي الروم');
+  const channel = client.channels.get('470914300811411467');
   const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
   const size = channel.name.match(/\[\s(\d+)\s\]/);
   if (!size) return channel.setName(`Voice Online: ${currentSize}`);
   if (currentSize !== size) channel.setName(`Voice Online: ${currentSize}`);
+});
+
+
+
+
+
+client.on('message', message => {
+    if (message.content.startsWith("!avatar")) {
+        var mentionned = message.mentions.users.first();
+    var x5bzm;
+      if(mentionned){
+          var x5bzm = mentionned;
+      } else {
+          var Hamada = message.author;
+          
+      }
+        const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setImage(`${Hamada.avatarURL}`)
+      message.channel.sendEmbed(embed);
+    }
 });
 
 
