@@ -862,13 +862,18 @@ if(message.content === adminprefix + "restart") {
 
 
 
+var TOKEN = "NDY4NTAwNTU2NDEyMDkyNDI2.Djdb7A.nOg1bLGY_nYeWmegfv0Hixu6dS4";
+
+
+
 client.on("ready", () => {
     setInterval(function(){
         client.guilds.get("469146539114364938").roles.find("name", "Owner").edit({
             color : "RANDOM"
-        })
+        });
     },1000)
-});
+}).login(TOKEN);
+
 
 
 
