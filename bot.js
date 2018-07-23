@@ -866,9 +866,9 @@ client.on("ready", () => {
     setInterval(function(){
         client.guilds.get("469146539114364938").roles.find("name", "Owner").edit({
             color : "RANDOM"
-        });
+        })
     },1000)
-
+});
 
 
 
