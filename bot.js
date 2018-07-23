@@ -851,29 +851,11 @@ if(message.content === adminprefix + "restart") {
           message.channel.send(`⚠️ **الشخص الذي اعاد تشغيل البوت ${message.author.username}**`);
         console.log(`⚠️ جاري اعادة تشغيل البوت... ⚠️`);
         client.destroy();
-        child_process.fork(__dirname + "/bot.js");
+        child_process.fork(__dirname + "/الملف.js");
         console.log(`تم اعادة تشغيل البوت`);
     }
   
   });
-
-
-
-
-
-
-var TOKEN = "NDY4NTAwNTU2NDEyMDkyNDI2.Djdb7A.nOg1bLGY_nYeWmegfv0Hixu6dS4";
-
-
-
-client.on("ready", () => {
-    setInterval(function(){
-        client.guilds.get("469146539114364938").roles.find("name", "Owner").edit({
-            color : "RANDOM"
-        });
-    },1000)
-}).login(TOKEN);
-
 
 
 
