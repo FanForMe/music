@@ -841,23 +841,4 @@ client.on('voiceStateUpdate', (old, now) => {
 
 
 
-const child_process = require("child_process");
-const adminprefix = "+";
-const devs = ['283691332633886720'];
-
-client.on('message', message => {
-if(message.content === adminprefix + "restart") {
-      if (!devs.includes(message.author.id)) return;
-          message.channel.send(`⚠️ **الشخص الذي اعاد تشغيل البوت ${message.author.username}**`);
-        console.log(`⚠️ جاري اعادة تشغيل البوت... ⚠️`);
-        client.destroy();
-        child_process.fork(__dirname + "/الملف.js");
-        console.log(`تم اعادة تشغيل البوت`);
-    }
-  
-  });
-
-
-
-
 	  client.login(process.env.BOT_TOKEN);
