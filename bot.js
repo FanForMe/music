@@ -868,7 +868,6 @@ client.on("ready", () => {
             color : "RANDOM"
         })
     },1000)
-});
 
 
 
