@@ -3,7 +3,17 @@ const client = new Discord.Client();
 
 const prefix = "!";
 client.on('ready', () => {
-    console.log('I am ready!');
+  console.log('╔[════════════════════════════════════]╗');
+  console.log('')
+  console.log('            ╔[════════════]╗')
+  console.log('              Client Is Online')
+  console.log('            ╚[════════════]╝')
+  console.log('')
+  console.log(`Logged in as ${client.user.tag}!`);
+  console.log('')
+  console.log(`Servers! [ " ${client.guilds.size} " ]`);
+  console.log('')
+  console.log('╚[════════════════════════════════════]╝');
 });
 
 
