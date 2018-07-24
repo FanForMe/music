@@ -18,6 +18,102 @@ client.on('ready', () => {
 
 
 
+
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help") {
+		 message.channel.send('**The Message Was Sent On Private**');
+
+
+
+
+
+ message.author.sendMessage(`
+ **
+__~~ELBobBot~~__ By: ELBobGamer ツ ᵖᵍˣᵖᵒ ♥#0881
+╭━━━┳╮╱╱╭━━╮╱╱╱╭╮╱╭━━╮╱╱╱╭╮
+┃╭━━┫┃╱╱┃╭╮┃╱╱╱┃┃╱┃╭╮┃╱╱╭╯╰╮
+┃╰━━┫┃╱╱┃╰╯╰┳━━┫╰━┫╰╯╰┳━┻╮╭╯
+┃╭━━┫┃╱╭┫╭━╮┃╭╮┃╭╮┃╭━╮┃╭╮┃┃
+┃╰━━┫╰━╯┃╰━╯┃╰╯┃╰╯┃╰━╯┃╰╯┃╰╮
+╰━━━┻━━━┻━━━┻━━┻━━┻━━━┻━━┻━╯
+╔[❖════════════❖]╗
+             Prefix = ' ! '
+╚[❖════════════❖]╝
+
+╔[❖════════════❖]╗
+             Admin Commands
+╚[❖════════════❖]╝
+
+❖ !cc ➾ create colors roles
+
+❖ !moveall ➾ move all members to your room
+
+❖ !clear ➾ clear chat 
+
+❖ !bc <message> ➾ message all members in server
+
+
+╔[❖════════════❖]╗
+            General  Commands
+╚[❖════════════❖]╝
+
+❖ !calc (Ex:!calc 5+5) ➾ Calculate anything
+
+❖ !members ➾ members info
+
+❖ !stats ➾ to show bot stats
+
+❖ !invites ➾ your invites
+
+❖ !id ➾ infortmation about you
+
+❖ !server ➾ server informations
+
+❖ !level ➾ to know your level
+
+❖ رابط ➾ server invite for 24 hours
+
+❖ الوان ➾ to see the server colors roles
+
+❖ لون ➾ to choose any color
+
+╔[❖════════════❖]╗
+                    Credits
+╚[❖════════════❖]╝
+
+❖ !credits ➾ to see your credits
+
+❖ !daily ➾ to take your daily credits
+
+❖ !trans <@mention> <amount> ➾ transfer credits 
+
+╔[❖════════════❖]╗
+            Music Commands
+╚[❖════════════❖]╝
+
+❖ !join ➾ the bot join your room
+
+❖ !play <url> ➾ play any music 
+
+❖ !stop ➾ stop the music and leave the room
+
+❖ !pause ➾ pause the music
+
+❖ !resume ➾ resume the music
+
+==================================================================
+`);
+
+    }
+});
+
+
+
+
+
+
+
 client.on('message', message => {
      if(!message.channel.guild) return;
   if(message.content.startsWith(prefix + 'clear')) {
