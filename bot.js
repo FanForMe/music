@@ -69,11 +69,13 @@ client.on('message', message => {
             General  Commands
 ╚[❖════════════❖]╝
 
-❖ !calc (Ex:!calc 5+5) ➾ Calculate anything
+❖ !calc (Ex: !calc 5+5) ➾ Calculate anything
 
 ❖ !members ➾ members info
 
 ❖ !say ➾ the bot says what you say
+
+❖ !avatar ➾ shows your profile picture
 
 ❖ !embed ➾ put your text in embed
 
