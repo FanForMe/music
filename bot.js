@@ -47,6 +47,16 @@ client.on('message', message => {
              Admin Commands
 ╚[❖════════════❖]╝
 
+❖ !mutechannel ➾ mute any text channel
+
+❖ !unmutechannel ➾ unmute any text channel
+
+❖ !kick ➾ kick anyone
+
+❖ !ban ➾ ban anyone
+
+❖ !createtext ➾ create text channel
+
 ❖ !cc ➾ create colors roles
 
 ❖ !moveall ➾ move all members to your room
