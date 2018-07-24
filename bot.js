@@ -1109,7 +1109,7 @@ if (message.content.startsWith(prefix+"createtext")) {
     var argrst = args.join(' ');
                 message.guild.createChannel(`${argrst}`, 'text')
       }
-
+});
 
 
 client.login(process.env.BOT_TOKEN)
