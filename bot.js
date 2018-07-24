@@ -74,6 +74,10 @@ client.on('message', message => {
 
 ❖ !members ➾ members info
 
+❖ !say ➾ the bot says what you say
+
+❖ !embed ➾ put your text in embed
+
 ❖ !stats ➾ to show bot stats
 
 ❖ !invites ➾ your invites
