@@ -934,6 +934,9 @@ client.on("message", message => {
 
 
 
+const LOka = new Discord.Client();
+});
+
 
 LOka.on("message", message => {
   if(!message.content.startsWith(prefix)) return;;
@@ -1197,7 +1200,7 @@ LOka.on('message', message => {
    
 })
  
- 
+
 }
 });
 LOka.on('message', message => {
