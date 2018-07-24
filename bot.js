@@ -1152,28 +1152,5 @@ if (command == "embed") {
 
 
 
-client.on('message' , message => {
-    if(message.content.includes === 'السلام عليكم') {
-    message.channel.send(`وعليكم السلام :heart:`);
-    }
-     });
-
-
-
-client.on('message' , message => {
-    if(message.content.includes === 'الو') {
-    message.channel.send(`اشغلوا :joy:`);
-    }
-     });
-
-
-
-client.on('message' , message => {
-    if(message.content.includes === 'مين ؟') {
-    message.channel.send(`افسح التنين :joy:`);
-    }
-     });
-
-
 
 client.login(process.env.BOT_TOKEN)
