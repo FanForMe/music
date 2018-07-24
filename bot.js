@@ -1027,4 +1027,77 @@ client.on("message", message => {
 
 
 
+
+client.on('message', message => {
+if (message.content.startsWith("!ban")) {
+    var mention = message.mentions.members.first();
+    if(!mention) return message.channel.send("يجب منشن العضو");
+
+    mention.ban("By: " + message.author.tag);
+    
+    message.channel.send("تم أعطاء باند الى : " + mention.tag);
+};
+});
+
+
+
+
+
+
+client.on('message', message => {
+if (message.content.startsWith("!kick")) {
+    var mention = message.mentions.members.first();
+    if(!mention) return message.channel.send("يجب منشن العضو");
+
+    mention.kick("By: " + message.author.tag);
+    
+    message.channel.send("تم أعطاء كيك الى : " + mention.tag);
+};
+});
+
+
+
+
+client.on('message', message => {
+
+    if (message.content === "!mutechannel") {
+                        if(!message.channel.guild) return message.reply(' This command only for servers');
+
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: false
+
+           }).then(() => {
+               message.reply("تم تقفيل الشات :white_check_mark: ")
+           });
+             }
+if (message.content === "!unmutechannel") {
+    if(!message.channel.guild) return message.reply(' This command only for servers');
+
+if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: true
+
+           }).then(() => {
+               message.reply("تم فتح الشات:white_check_mark:")
+           });
+             }
+
+
+
+});
+
+
+
+
+
+client.on('message', message => {
+if (message.content.startsWith(prefix+"createtext")) {
+    var args = message.content.split(" ").slice(1);
+    var argrst = args.join(' ');
+                message.guild.createChannel(`${argrst}`, 'text')
+      }
+
+
+
 client.login(process.env.BOT_TOKEN)
