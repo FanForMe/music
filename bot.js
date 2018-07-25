@@ -1237,4 +1237,13 @@ message.channel.send(id)
 
 
 
+
+
+client.on('guildMemberAdd', member=> {
+    member.addRole(member.guild.roles.find("name","member"));
+    });
+
+
+
+
 client.login(process.env.BOT_TOKEN)
