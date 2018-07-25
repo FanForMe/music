@@ -448,10 +448,7 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 
 
 
-
-
-
-const { PREFIX, GOOGLE_API_KEY } = require('./config');
+const { TOKEN, PREFIX, GOOGLE_API_KEY } = require('./config');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
@@ -538,7 +535,7 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 			}
 			return handleVideo(video, msg, voiceChannel);
 		}
-	} else if (command === "skip") {
+	} else if (command === "s") {
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing that I could skip for you.');
 		serverQueue.connection.dispatcher.end('Skip command has been used!');
@@ -661,9 +658,6 @@ client.on('message', message => {
   var argresult = args.join(' ');
   if (message.author.id !== "369974738916868120") return;
 
-
-
-
 if (message.content.startsWith(PREFIX + 'setname')) {
   client.user.setUsername(argresult).then
 	  message.channel.sendMessage(`Username Changed To **${argresult}**`)
@@ -672,6 +666,8 @@ if (message.content.startsWith(PREFIX + 'setname')) {
 if (message.content.startsWith(PREFIX + 'setavatar')) {
   client.user.setAvatar(argresult);
    message.channel.sendMessage(`Avatar Changed Successfully To **${argresult}**`);
+}
+});
 
 
 
