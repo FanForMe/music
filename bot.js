@@ -452,7 +452,7 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
-const yt_api_key = (AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8);
+const yt_api_key = "AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8";
 
 const queue = new Map();
 
