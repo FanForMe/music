@@ -456,11 +456,22 @@ const youtube = new YouTube(GOOGLE_API_KEY);
 
 const queue = new Map();
 
+client.on('ready', () => {
+console.log('Logging into discord..');
 });
+
+client.on('warn', console.warn);
+
+client.on('error', console.error);
+
+client.on('ready', () => console.log('Yo this ready!'));
+
 
 // client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
 // client.on('reconnecting', () => console.log('I am reconnecting now!'));
+
+client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(PREFIX)) return undefined;
 
