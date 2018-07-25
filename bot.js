@@ -451,7 +451,7 @@ const { Client, Util } = require('discord.js');
 const request = require('request');
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
-const YouTube = require('simple-youtube-api');
+const youTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
 const yt_api_key = "AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8";
