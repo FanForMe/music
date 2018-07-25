@@ -667,7 +667,7 @@ if (message.content.startsWith(PREFIX + 'setavatar')) {
   client.user.setAvatar(argresult);
    message.channel.sendMessage(`Avatar Changed Successfully To **${argresult}**`);
 }
-});
+};
 
 
 
