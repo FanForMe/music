@@ -447,8 +447,7 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 
 
 
-const Discord = require('discord.js');
-const client = new Discord.Client();
+
 const ytdl = require('ytdl-core');
 const request = require('request');
 const fs = require('fs');
@@ -456,12 +455,6 @@ const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const prefix = '+';
-const discord_token = "توكين البوت";
-client.login(discord_token);
-client.on('ready', function() {
-    console.log(`i am ready ${client.user.username}`);
-});
 /*
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -589,7 +582,7 @@ client.on('message', function(message) {
         var server = server = servers[message.guild.id];
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
-    else if (mess.startsWith(prefix + 'تعال')) {
+    else if (mess.startsWith(prefix + 'join')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
     }
