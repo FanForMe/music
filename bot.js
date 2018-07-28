@@ -1289,7 +1289,7 @@ client.on('guildMemberAdd', member=> {
 
 
 const developers = ["283691332633886720"]
-const adminprefixe = "-";
+const adminprefix = "-";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
