@@ -450,7 +450,6 @@ mentionned.send(` :credit_card: | Transfer Receipt \`\`\`You have received ${arg
 
 const ytdl = require('ytdl-core');
 const request = require('request');
-const fs = require('fs');
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 
