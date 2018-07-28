@@ -569,7 +569,7 @@ client.on('message', function(message) {
             dispatcher.pause();
         });
     }
-    else if (mess.startsWith(prefix + 'ok')) {
+    else if (mess.startsWith(prefix + 'resume')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
             message.channel.send('`✔`').then(() => {
             dispatcher.resume();
