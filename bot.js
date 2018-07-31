@@ -661,7 +661,7 @@ function play(guild, song) {
 
 
 	client.on('ready', () => {
-		client.user.setGame(`By: ELBobGamer l !help`,"http://twitch.tv/elbobgamer")
+		client.user.setGame(`!help | By: ELBobGamer`,"http://twitch.tv/elbobgamer")
 		 client.user.setStatus("dnd")
 	  });
 
