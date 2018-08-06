@@ -1459,7 +1459,7 @@ var title = args[1]
           if(message.content.startsWith(prefix + "gstart")) {
               if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **s You Dont Have Premission**');
               if(!args) return message.channel.send(`**Use : !gstart  <Time> <Presentse>**`);
-              if(!title) return message.channel.send(`**Use : **`!gstart ${args[0]} Minutes`** <Presentse>**`);
+              if(!title) return message.channel.send(`**Use : **`\!gstart ${args[0]} Minutes`\** <Presentse>**`);
          if(!isNaN(args)) return message.channel.send(':heavy_multiplication_x:| **The Time Must Be Numbers `` Do the Command Again``**');
                            let giveEmbed = new Discord.RichEmbed()
                   .setAuthor(message.guild.name, message.guild.iconURL)
