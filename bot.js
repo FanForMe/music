@@ -1456,10 +1456,10 @@ message.channel.sendFile(canvas.toBuffer());
 client.on('message',async message => {
 var args = message.content.split(" ").slice(1);
 var title = args[1]
-          if(message.content.startsWith(prefix + "start")) {
+          if(message.content.startsWith(prefix + "gstart")) {
               if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **s You Dont Have Premission**');
               if(!args) return message.channel.send(`**Use : $start  <Time> <Presentse>**`);
-              if(!title) return message.channel.send(`**Use : **\`$start ${args[0]} Minutes\`** <Presentse>**`);
+              if(!title) return message.channel.send(`**Use : **\`$start ${args[1]} Minutes\`** <Presentse>**`);
          if(!isNaN(args)) return message.channel.send(':heavy_multiplication_x:| **The Time Be Nambers `` Do the Commend Agin``**');
                            let giveEmbed = new Discord.RichEmbed()
                   .setAuthor(message.guild.name, message.guild.iconURL)
