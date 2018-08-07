@@ -1573,4 +1573,19 @@ var duration = (upgradeTime * 1000)
 
 
 
+client.on('message', message => {
+              if (!message.channel.guild) return;
+      if(message.content =='!count')
+      var SaifDz = new Discord.RichEmbed()
+      .setThumbnail(message.author.avatarURL)
+      .setFooter(message.author.username, message.author.avatarURL)
+      .setTitle('🌷| Members info')
+      .addBlankField(true)
+      .addField('عدد اعضاء السيرفر',`${message.guild.memberCount}`)
+      message.channel.send(SaifDz);
+    });
+
+
+
+
 client.login(process.env.BOT_TOKEN)
