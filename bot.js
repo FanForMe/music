@@ -1580,7 +1580,6 @@ client.on('message', message => {
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL)
       .setTitle('🌷| Members info')
-      .addBlankField(true)
       .addField('عدد اعضاء السيرفر',`${message.guild.memberCount}`)
       message.channel.send(SaifDz);
     });
