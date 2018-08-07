@@ -1575,7 +1575,7 @@ var duration = (upgradeTime * 1000)
 
 client.on('message', async message => {
   let Client = require('fortnite');
-  let fortnite = new Client('83b4a726-d1b2-4ac2-9f05-ac2ee9556416');
+  let fortnite = new Client('2bb97881-c068-4cba-b3b5-152abfc71c83');
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
@@ -1587,7 +1587,7 @@ client.on('message', async message => {
         
     if(!username) return message.reply('**Specify a username!**');
     
-    let data = fortnite.user(username, platform).then(data => {
+    let data = (username, platform).then(data => {
         let stats = data.stats;
         
         if(gamemode === 'solo') {
