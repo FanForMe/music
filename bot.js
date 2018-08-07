@@ -1587,7 +1587,6 @@ client.on('message', async message => {
         
     if(!username) return message.reply('**Specify a username!**');
     
-    let data = (username, platform).then(data => {
         let stats = data.stats;
         
         if(gamemode === 'solo') {
