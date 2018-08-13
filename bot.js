@@ -1754,13 +1754,13 @@ client.on('message', async message => {
   if(message.author.bot) return;
    if(!temp[message.guild.id]) temp[message.guild.id] = {
     time: "3000",
-     category : 'click here',
-      channel : 'click here'
+     category : 'Click Here',
+      channel : 'Click Here'
        }
         if(message.content.startsWith('!temp on')){
          if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
-          var ggg= message.guild.createChannel('click here', 'category').then(cg => {
-           var ccc =message.guild.createChannel('click here', 'voice').then(ch => {
+          var ggg= message.guild.createChannel('Click Here', 'category').then(cg => {
+           var ccc =message.guild.createChannel('Click Here', 'voice').then(ch => {
             ch.setParent(cg)
              message.channel.send('**Done ,**')
               client.on('message' , message => {
@@ -1777,7 +1777,7 @@ client.on('message', async message => {
                          if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
                           let newTime= message.content.split(' ').slice(1).join(" ")
                           if(!newTime) return message.reply(`**${prefix}temptime <time>  \`1000 = 1s\`**`)
-	                 if(isNaN(newTime)) return message.reply(`** The Time Be Nambers :face_palm: **`);
+	                 if(isNaN(newTime)) return message.reply(`** The Time Must Be Numbers :face_palm: **`);
 	                if(newTime < 1) return message.reply(`**The Time Be Up \`3000s\`**`)
                        temp[message.guild.id].time = newTime
                       message.channel.send(`**Temp Rooms Time Change To \`${newTime}\`**`);
