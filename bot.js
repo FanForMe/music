@@ -1665,7 +1665,7 @@ client.on('message', message => {
       }
       muteMember.setMute(false);
       if(muteMember) {
-        message.channel.sendMessage("User muted successfully.");
+        message.channel.sendMessage("User unmuted successfully.");
       }
     }
   });
