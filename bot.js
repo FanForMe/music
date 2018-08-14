@@ -1588,7 +1588,7 @@ client.on('message', message =>{
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let prefix = '!!';
+    let prefix = '!';
 
 if(cmd === `${prefix}suggest`) {
     var suggestMessage = message.content.substring(7)
@@ -1629,7 +1629,6 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-        var prefix = "/";
         if(message.content.startsWith(prefix + 'mutevoice')) {
           if(!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.sendMessage("**ليس لديك صلاحية لاعطاء ميوت صوتي**❌ ").then(m => m.delete(5000));
           if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return message.reply("**I Don't Have `MUTE_MEMBERS` Permission**").then(msg => msg.delete(6000))
@@ -1653,7 +1652,6 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-      var prefix = "/";
       if(message.content.startsWith(prefix + 'unmutevoice')) {
         if(!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.sendMessage("**ليس لديك صلاحية لاعطاء ميوت صوتي**❌ ").then(m => m.delete(5000));
         if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return message.reply("**I Don't Have `MUTE_MEMBERS` Permission**").then(msg => msg.delete(6000))
