@@ -4,15 +4,9 @@ const client = new Discord.Client();
 const prefix = "!";
 client.on('ready', () => {
   console.log('╔[════════════════════════════════════]╗');
-  console.log('')
   console.log('            ╔[════════════]╗')
   console.log('           ELBobBot Is Online')
   console.log('            ╚[════════════]╝')
-  console.log('')
-  console.log(`Logged in as ${client.user.tag}!`);
-  console.log('')
-  console.log(`Servers! [ " ${client.guilds.size} " ]`);
-  console.log('')
   console.log('╚[════════════════════════════════════]╝');
 });
 
@@ -1481,94 +1475,97 @@ client.on('message', async message => {
 
 
 
+
 client.on('message',async message => {
-  if(message.author.bot) return;
-  var prefix = "!"
-if(message.content.indexOf(prefix) !== 0) return;
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
-if(command === "gstart") {
-var title = args[0].split('-').join(" ");
-if(args[2]) {
-  message.channel.send(` \`\`\`MD
-  # Title format <word>-<word>-<word> 
-  < do not use spaces use - insted
-   \`\`\``);
+  var time = moment().format('Do MMMM YYYY , hh:mm');
+  var room;
+  var title;
+  var duration;
+  var gMembers;
+  var currentTime = new Date(),
+hours = currentTime.getHours() + 3 ,
+minutes = currentTime.getMinutes(),
+done = currentTime.getMinutes() + duration / 60000 ,
+seconds = currentTime.getSeconds();
+if (minutes < 10) {
+minutes = "0" + minutes;
 }
-var time = args[1].split(":");
-var sec = time[3];
-var min = time[2];
-var hou = time[1];
-var day = time[0];
+var suffix = "AM";
+if (hours >= 12) {
+suffix = "PM";
+hours = hours - 12;
+}
+if (hours == 0) {
+hours = 12;
+}
 
-if((hou * 1) > 24) {
-  message.channel.send(` \`\`\`MD
-  # time format <days> : <hours> : <minutes> : <secondes>
-  < hours must be 24 or less
-   \`\`\``);
-}
-else if((sec * 1) > 60) {
-  message.channel.send(` \`\`\`MD
-  # time format <days> : <hours> : <minutes> : <secondes>
-  < minutes must be 60 or less 
-  \`\`\``);
-}
-else if((min * 1) > 60) {
-  message.channel.send(` \`\`\`MD
-  # time format <days> : <hours> : <minutes> : <secondes>
-  < seconds must be 60 or less
-  \`\`\``);
-} 
-else  {
+  var filter = m => m.author.id === message.author.id;
+  if(message.content.startsWith(prefix + "gstart")) {
 
-var upgradeTime = sec;
-upgradeTime = upgradeTime * 2 / 2 + (min * 60);
-upgradeTime = upgradeTime * 2 / 2 + (hou * 60 * 60);
-upgradeTime = upgradeTime * 2 / 2 + (day * 24 * 60 * 60);
-var seconds = upgradeTime;
-var duration = (upgradeTime * 1000)
-  if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **s You Dont Have Premission**');
-  if(!args) return message.channel.send(`**Use : !gstart  <Presentse> <Time>**`);
-  if(!title) return message.channel.send(`**Use : **\`!gstart ${args[0]} Minutes\`** <Presentse>**`);
-  if(!isNaN(args[1])) return message.channel.send(':heavy_multiplication_x:| **The Time Must Be Numbers `` Do the Command Again``**');
-        let giveEmbed = new Discord.RichEmbed()
-      .setAuthor(message.guild.name, message.guild.iconURL)
-      .setDescription(`**${title}** \nReact With 🎁 To Enter! \n**Ends  after   ${day} day  ${hou} hour  ${min} minute ${sec} second**`)
-      .setFooter(message.author.username, message.author.avatarURL);
-      message.channel.send(' :heavy_check_mark: **Giveaway Created** :heavy_check_mark:' , {embed: giveEmbed}).then(m => {
-          message.delete();
-          m.react('🎁');
-              var giveAwayCut = setInterval(function() {
-                  var days        = Math.floor(seconds/24/60/60);
-                  var hoursLeft   = Math.floor((seconds) - (days*86400));
-                  var hours       = Math.floor(hoursLeft/3600);
-                  var minutesLeft = Math.floor((hoursLeft) - (hours*3600));
-                  var minutes     = Math.floor(minutesLeft/60);
-                  var remainingSeconds = seconds % 60;
-                  if (seconds != 0) {
-                    seconds--;
-                  }
-              let updateGiveEmbed = new Discord.RichEmbed()
-              .setAuthor(message.guild.name, message.guild.iconURL)
-              .setDescription(`**${title}** \nReact With 🎁 To Enter! \n**Ends  after   ${days} day  ${hours} hour  ${minutes} minute ${remainingSeconds} second**`)
-              .setFooter(message.author.username, message.author.avatarURL);
-              m.edit(updateGiveEmbed)
-            }, 1000);
-         setTimeout(() => {
-          clearInterval(giveAwayCut)
-           let users = m.reactions.get("🎁").users;
-           let list = users.array().filter(u => u.id !== client.user.id);
-           let gFilter = list[Math.floor(Math.random() * list.length) + 0]
-           let endEmbed = new Discord.RichEmbed()
-           endEmbed.setAuthor(message.author.username, message.author.avatarURL)
-           endEmbed.setTitle(title)
-           endEmbed.addField('Giveaway End !🎁',`Winners : ${gFilter}`)
-         m.edit('** 🎁 GIVEAWAY ENDED 🎁**' , {embed: endEmbed});
-         },duration);
-       });
+    if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **يجب أن يكون لديك خاصية التعديل على السيرفر**');
+    message.channel.send(`:eight_pointed_black_star:| **Send Name channel For the Giveaway**`).then(msg => {
+      message.channel.awaitMessages(filter, {
+        max: 1,
+        time: 20000,
+        errors: ['time']
+      }).then(collected => {
+        let room = message.guild.channels.find('name' , collected.first().content);
+        if(!room) return message.channel.send(':heavy_multiplication_x:| **i Found It :(**');
+        room = collected.first().content;
+        collected.first().delete();
+        msg.edit(':eight_pointed_black_star:| **Time For The Giveaway**').then(msg => {
+          message.channel.awaitMessages(filter, {
+            max: 1,
+            time: 20000,
+            errors: ['time']
+          }).then(collected => {
+            if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| **The Time Be Nambers `` Do the Commend Agin``**');
+            duration = collected.first().content * 60000;
+            collected.first().delete();
+            msg.edit(':eight_pointed_black_star:| **Now send The Present **').then(msg => {
+              message.channel.awaitMessages(filter, {
+                max: 1,
+                time: 20000,
+                errors: ['time']
+              }).then(collected => {
+                title = collected.first().content;
+                collected.first().delete();
+                msg.delete();
+                message.delete();
+                try {
+                  let giveEmbed = new Discord.RichEmbed()
+                  .setDescription(`**${title}** \nReact With 🎉 To Enter! \nTime remaining : ${duration / 60000} **Minutes**\n **Created at :** ${hours}:${minutes}:${seconds} ${suffix}`)
+                  .setFooter(message.author.username, message.author.avatarURL);
+                  message.guild.channels.find("name" , room).send(' :heavy_check_mark: **Giveaway Created** :heavy_check_mark:' , {embed: giveEmbed}).then(m => {
+                     let re = m.react('🎉');
+                     setTimeout(() => {
+                       let users = m.reactions.get("🎉").users;
+                       let list = users.array().filter(u => u.id !== m.author.id !== client.user.id);
+                       let gFilter = list[Math.floor(Math.random() * list.length) + 0]
+                       let endEmbed = new Discord.RichEmbed()
+                       .setAuthor(message.author.username, message.author.avatarURL)
+                       .setTitle(title)
+                       .addField('Giveaway Ended !🎉',`Winners : ${gFilter} \nEnded at :`)
+                       .setTimestamp()
+					 m.edit('** 🎉 GIVEAWAY ENDED 🎉**' , {embed: endEmbed});
+					message.guild.channels.find("name" , room).send(`**Congratulations ${gFilter}! You won The \`${title}\`**` , {embed: {}})
+                     },duration);
+                   });
+                } catch(e) {
+                message.channel.send(`:heavy_multiplication_x:| **i Don't Have Prem**`);
+                  console.log(e);
+                }
+              });
+            });
+          });
+        });
+      });
+    });
   }
-}
 });
+
+
+
 
 
 
@@ -1825,6 +1822,37 @@ client.on('message', async message => {
       });
 
 
+
+
+
+
+const weather = require('weather-js');
+ client.on('message', message => {
+     if(message.content.startsWith(prefix + "weather")) {
+         var args = message.content.split(" ").slice(1);
+ weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
+      if (err) message.channel.send(err);
+      if (result === undefined || result.length === 0) {
+          message.channel.send('**Please enter a location!**')
+          return;
+      }
+      var current = result[0].current;
+      var location = result[0].location;
+      const embed = new Discord.RichEmbed()
+          .setDescription(`**${current.skytext}**`)
+          .setAuthor(`Weather for ${current.observationpoint}`)
+          .setThumbnail(current.imageUrl)
+          .setColor(0x00AE86)
+          .addField('Timezone',`UTC${location.timezone}`, true)
+          .addField('Degree Type',location.degreetype, true)
+          .addField('Temperature',`${current.temperature} Degrees`, true)
+          .addField('Feels Like', `${current.feelslike} Degrees`, true)
+          .addField('Winds',current.winddisplay, true)
+          .addField('Humidity', `${current.humidity}%`, true)
+          message.channel.send({embed});
+  })
+}
+ });
 
 
 client.login(process.env.BOT_TOKEN)
