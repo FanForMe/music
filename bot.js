@@ -2021,8 +2021,6 @@ if(!message.channel.guild) return;
 
 
 
-const {Client} = require('discord.js')
-const client = new Client()
 const RainClient = require("rainbow-role")
 const rain = new RainClient(prefix (!), roleName (Administrator), size (15), speed (60), logging (false))
 
