@@ -2022,7 +2022,7 @@ if(!message.channel.guild) return;
 
 
 const RainClient = require("rainbow-role")
-const rain = new RainClient(prefix !, roleName Rainbow, size 15, speed 60, logging false)
+const rain = new RainClient(prefix(!) , roleName(Rainbow), size(15), speed(60), logging(false));
 
 //prefix (string) => البرفكس الي تبيه يكون للكوماند => default is "!"
 //roleName (string) => اسم الرول الي تبيه يكون حق ال rainbow => default is "Rainbow"
@@ -2032,7 +2032,7 @@ const rain = new RainClient(prefix !, roleName Rainbow, size 15, speed 60, loggi
  
 //يمديك تستخدم اي من ال parmas في كودك ...
 
-rain.rainbow(client) // على حسب , اذا كنت معرفه client او bot
+rain.rainbow(client); // على حسب , اذا كنت معرفه client او bot
 
 
 
