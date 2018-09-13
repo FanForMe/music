@@ -2054,9 +2054,10 @@ if(message.content.startsWith(prefix + "stopdisco")) {
  
 });
 const config = require('config.json');
+const prefix = ('!')
  
-const allowedUsers = config.allowedUsers;
-const roles = config.roleToDisco;
+const allowedUsers = ('283691332633886720');
+const roles = ('Rainbow')
  
 client.on("ready", () => {
     console.log("Disco role bot online! Created by i am toast.");
