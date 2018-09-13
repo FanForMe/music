@@ -2053,8 +2053,6 @@ if(message.content.startsWith(prefix + "stopdisco")) {
 }
  
 });
-const config = require('config.json');
- 
 const allowedUsers = ('283691332633886720');
 const roles = ('Rainbow')
  
