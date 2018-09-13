@@ -2035,7 +2035,7 @@ client.on("message", message => {
  
   if(message.content.startsWith(prefix + "startdisco")) {
     if(allowedUsers.includes(message.author.id)) {
-    setInterval(() => { discoRole(); }, 1500 ms);
+    setInterval(() => { discoRole(); }, 1500) ms);
     message.channel.send("```css\nDiscoing...```");
     message.channel.send("Please make sure you read the README, you could get IP banned from discord because of ratelimits.");
   } else {
