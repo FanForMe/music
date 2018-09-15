@@ -1524,25 +1524,20 @@ client.on('message', message => {
 
 
 
-client.on('message', message =>{
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-
-if(cmd === `${prefix}suggest`) {
-    var suggestMessage = message.content.substring(7)
-    let suggestEMBED = new Discord.RichEmbed()
-    .setColor(3447003)
-    .setTitle("New suggest just added!!")
-    .setDescription(`**${suggestMessage}**`)
-    .setFooter(`Suggested By : ${message.author.tag}`);
-    message.delete().catch(O_o=>{}) 
-    let suggests = message.guild.channels.find(`name`, "suggests");
-    if (!suggests) return message.channel.send("You should make A **suggests** channel!")
-    suggests.send(suggestEMBED);
-}
-
-});
+client.on('message', message => {
+ 
+  if (message.content.startsWith( prefix + "sug")) {
+  if (!message.channel.guild) return;
+  let args = message.content.split(" ").slice(1).join(' ');
+  client.channels.get("490601505511178242").send(
+      "\n" + "**" + "● اقتراحات سيرفر :" + "**" +
+      "\n" + "**" + "» " + message.guild.name + "**" +
+      "\n" + "**" + " ● مرسل الاقتراح : " + "**" +
+      "\n" + "**" + "» " + message.author.tag + "**" +
+      "\n" + "**" + " ● الاقتراح : " + "**" +
+      "\n" + "**" + args + "**")
+  }
+  });
 
 
 
