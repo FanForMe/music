@@ -936,18 +936,6 @@ client.on("guildMemberAdd", member => {
 
 
 
-client.on('voiceStateUpdate', (old, now) => {
-  const channel = client.channels.get('470914300811411467');
-  const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
-  const size = channel.name.match(/\[\s(\d+)\s\]/);
-  if (!size) return channel.setName(`Voice Online: ${currentSize}`);
-  if (currentSize !== size) channel.setName(`Voice Online: ${currentSize}`);
-});
-
-
-
-
-
 
 //جاكيو لفل 
 let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
