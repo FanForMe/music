@@ -1978,10 +1978,6 @@ if(!message.channel.guild) return;
 
 
 
-
-
-,ti={}  
-,spee={};
  
  
  
