@@ -1980,7 +1980,7 @@ if(!message.channel.guild) return;
 
 
 const RainClient = require("rainbow-role")
-const rain = new RainClient("!", "Disco", 10, 5, false)
+const rain = new RainClient("!", "Rainbow", 10, 5, false)
 
 //prefix (string) => البرفكس الي تبيه يكون للكوماند => default is "!"
 //roleName (string) => اسم الرول الي تبيه يكون حق ال rainbow => default is "Rainbow"
