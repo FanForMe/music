@@ -1979,21 +1979,6 @@ if(!message.channel.guild) return;
 
 
 
-const RainClient = require("rainbow-role")
-const rain = new RainClient("!", "Rainbow", 10, 2, false)
-
-//prefix (string) => البرفكس الي تبيه يكون للكوماند => default is "!"
-//roleName (string) => اسم الرول الي تبيه يكون حق ال rainbow => default is "Rainbow"
-//size (number) => كم عدد الالوان الي تبيه => default is 10
-//speed(number) => سرعة ال rainbow بالثواني => default is 60
-//logging(boolean ) => هل تبي يطلعلك بالكونسل لوق كل ما يتغير اللون؟ => default is false
- 
-//يمديك تستخدم اي من ال parmas في كودك ...
-
-rain.rainbow(client) // على حسب , اذا كنت معرفه client او bot
-
-
-
 
 
 client.login(process.env.BOT_TOKEN)
