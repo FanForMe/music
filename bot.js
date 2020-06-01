@@ -23,7 +23,7 @@ client.on('message', message => {
 
 
  message.author.sendMessage(`
-**ELBobBot** By: ELBobGamer ツ ᵖᵍˣᵖᵒ ♥#0881
+**AFP Bot** By: !               AFP | ELBobGamer#0881
 
 ╭━━━┳╮╱╱╭━━╮╱╱╱╭╮╱╭━━╮╱╱╱╭╮
 ┃╭━━┫┃╱╱┃╭╮┃╱╱╱┃┃╱┃╭╮┃╱╱╭╯╰╮
