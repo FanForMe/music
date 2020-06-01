@@ -23,8 +23,7 @@ client.on('message', message => {
 
 
  message.author.sendMessage(`
-**AFP Bot** By: !               AFP | ELBobGamer#0881--FanForMe
-
+**AFP Bot** By:
 ╭━━━┳╮╱╱╭━━╮╱╱╱╭╮╱╭━━╮╱╱╱╭╮
 ┃╭━━┫┃╱╱┃╭╮┃╱╱╱┃┃╱┃╭╮┃╱╱╭╯╰╮
 ┃╰━━┫┃╱╱┃╰╯╰┳━━┫╰━┫╰╯╰┳━┻╮╭╯
